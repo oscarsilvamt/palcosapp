@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 public class Box {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
     private String name;
