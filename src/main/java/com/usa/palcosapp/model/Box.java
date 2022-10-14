@@ -24,7 +24,7 @@ public class Box {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "idcategory")
+    @JoinColumn(name = "idCategory")
     @JsonIgnoreProperties("boxes")
     private Category category;
 

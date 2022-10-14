@@ -21,7 +21,7 @@ public class CategoryService {
     }
 
     public Category save(Category category){
-        if(category.getId()!=null){
+        if(category.getId()==null){
             return categoryRepository.save(category);
         } else {
             Optional<Category> optional= categoryRepository.getById(category.getId());
