@@ -40,6 +40,9 @@ public class CategoryService {
                 if(category.getName()!=null){
                     optional.get().setName(category.getName());
                 }
+                if(category.getDescription()!=null){
+                    optional.get().setDescription (category.getDescription());
+                }
                 categoryRepository.save(optional.get());
                 return optional.get();
             }else{
