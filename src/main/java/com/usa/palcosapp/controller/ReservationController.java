@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,8 +53,9 @@ public class ReservationController {
     }
 
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
-    public List<Reservation> getReservationReportDates(@PathVariable("dateOne")Date dateOne, @PathVariable("dateTwo")Date dateTwo){
-        return getReservationReportDates(dateOne,dateTwo);
+    public List<Reservation> getReservationReportDates(@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        //return getReservationReportDates(dateOne,dateTwo);
+        return reservationService.getReservationPeriod(dateOne,dateTwo);
     }
 
     @GetMapping("/report-clients")
